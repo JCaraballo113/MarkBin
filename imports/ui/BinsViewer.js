@@ -7,9 +7,7 @@ class BinsViewer extends Component {
         return(
             <div className="col-xs-5">
                 <h5>Output</h5>
-                <div className="bin-viewer" dangerouslySetInnerHTML={{ __html: rawHTML }}>
-
-                </div>
+                <div className="bin-viewer" dangerouslySetInnerHTML={{ __html: rawHTML }}></div>
             </div>
         );
     }

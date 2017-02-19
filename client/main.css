@@ -19,3 +19,19 @@
 .bin-viewer > h1, h2, h3, h4, h5, h6 {
     color: white;
 }
+
+.bin-share {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.bin-share .input-group {
+    width: 30%;
+}
+.bin-share > div {
+    margin-right: 10px;
+}

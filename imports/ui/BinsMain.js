@@ -4,6 +4,7 @@ import { Bins } from '../collections/Bins';
 
 import BinsEditor from './BinsEditor';
 import BinsViewer from './BinsViewer';
+import BinsShare from './BinsShare';
 import ReactSpinner from 'react-spinjs';
 
 class BinsMain extends Component {
@@ -18,6 +19,7 @@ class BinsMain extends Component {
             <div>
                 <BinsEditor bin={this.props.bin} />
                 <BinsViewer bin={this.props.bin} />
+                <BinsShare bin={this.props.bin} />
             </div>
         );
     }
@@ -26,6 +28,7 @@ class BinsMain extends Component {
 export default createContainer((props) => {
     const {binId} = props.params;
     Meteor.subscribe('bins');
+    Meteor.subscribe('sharedBins');
 
     return {
         bin: Bins.findOne(binId)

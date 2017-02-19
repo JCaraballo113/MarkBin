@@ -17,10 +17,14 @@ Meteor.methods({
     },
 
     'Bins.update': function(bin, content) {
+        return Bins.update(bin._id, { $set: { content } });
+    },
+
+    'Bins.share': function(bin, email) {
         if(bin.ownerId === this.userId) {
-            return Bins.update(bin._id, { $set: { content } });
+            return Bins.update(bin._id, { $push: { sharedWith: email } });
         }
-    }
+    },
 
 });
 
